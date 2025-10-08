@@ -1,0 +1,35 @@
+# Android Studio
+*.iml
+.gradle/
+/local.properties
+/.idea/
+.DS_Store
+/build/
+/captures/
+.externalNativeBuild/
+.cxx/
+local.properties
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Gradle
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Logs
+*.log
+
+# APKs
+*.apk
+*.ap_
+
+# Google Services (if used)
+google-services.json
+
+# Misc
+*.keystore
+
+# Ignore generated files
+app/build/
