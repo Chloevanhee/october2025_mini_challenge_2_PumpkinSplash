@@ -9,7 +9,6 @@ import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.animateColor
 import androidx.compose.animation.core.EaseIn
 import androidx.compose.animation.core.EaseInOutCirc
-import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.animateFloat
 import androidx.compose.animation.core.animateIntOffset
 import androidx.compose.animation.core.tween
