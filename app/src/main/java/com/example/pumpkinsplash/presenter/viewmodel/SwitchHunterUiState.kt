@@ -1,3 +1,3 @@
-package com.example.pumpkinsplash
+package com.example.pumpkinsplash.presenter.viewmodel
 
 data  class SwitchHunterUiState(val isDay: Boolean = true)

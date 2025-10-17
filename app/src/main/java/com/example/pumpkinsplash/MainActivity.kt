@@ -16,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.animation.doOnEnd
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.example.pumpkinsplash.presenter.viewmodel.SwitchHunterRoot
 import com.example.pumpkinsplash.ui.theme.PumpkinSplashTheme
 
 
@@ -55,7 +56,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize()
                 ) { innerPadding ->
                     TransitionDayNight(
-                        modifier = Modifier.padding(innerPadding)
+                        modifier = Modifier.padding(/*innerPadding*/)
                     )
                 }
             }

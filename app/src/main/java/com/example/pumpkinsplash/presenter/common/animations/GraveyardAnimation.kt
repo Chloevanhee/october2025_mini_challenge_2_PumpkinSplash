@@ -1,4 +1,4 @@
-package com.example.pumpkinsplash
+package com.example.pumpkinsplash.presenter.common.animations
 
 import androidx.compose.animation.animateColor
 import androidx.compose.animation.core.EaseIn
@@ -20,6 +20,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.pumpkinsplash.R
+import com.example.pumpkinsplash.TransitionDayNight
 import com.example.pumpkinsplash.ui.theme.HunterSwitcherday
 import com.example.pumpkinsplash.ui.theme.HunterSwitchernight
 import com.example.pumpkinsplash.ui.theme.PumpkinSplashTheme

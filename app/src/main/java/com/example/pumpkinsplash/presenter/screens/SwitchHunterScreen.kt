@@ -1,4 +1,4 @@
-package com.example.pumpkinsplash
+package com.example.pumpkinsplash.presenter.screens
 
 import androidx.compose.animation.core.updateTransition
 import androidx.compose.foundation.layout.Box
@@ -12,6 +12,17 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
+import com.example.pumpkinsplash.presenter.common.animations.Cloud1Animation
+import com.example.pumpkinsplash.presenter.common.animations.Cloud2Animation
+import com.example.pumpkinsplash.presenter.common.animations.Cloud3Animation
+import com.example.pumpkinsplash.presenter.common.components.CustomToggle
+import com.example.pumpkinsplash.presenter.common.animations.GhostAnimation
+import com.example.pumpkinsplash.presenter.common.animations.Graveyard
+import com.example.pumpkinsplash.presenter.viewmodel.HunterSwitcherEvent
+import com.example.pumpkinsplash.presenter.common.animations.MoonAnimation
+import com.example.pumpkinsplash.presenter.common.animations.StarAnimation
+import com.example.pumpkinsplash.presenter.common.animations.SunAnimation
+import com.example.pumpkinsplash.presenter.viewmodel.SwitchHunterUiState
 
 @Composable
 fun SwitchHunterScreen(

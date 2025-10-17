@@ -1,4 +1,4 @@
-package com.example.pumpkinsplash
+package com.example.pumpkinsplash.presenter.viewmodel
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.Composable
@@ -6,6 +6,7 @@ import androidx.compose.ui.Modifier
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.pumpkinsplash.presenter.screens.SwitchHunterScreen
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 

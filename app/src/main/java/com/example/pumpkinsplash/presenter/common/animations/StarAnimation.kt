@@ -1,4 +1,4 @@
-package com.example.pumpkinsplash
+package com.example.pumpkinsplash.presenter.common.animations
 
 import androidx.compose.animation.core.EaseInOutCirc
 import androidx.compose.animation.core.Transition
@@ -14,6 +14,8 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.pumpkinsplash.R
+import com.example.pumpkinsplash.TransitionDayNight
 import com.example.pumpkinsplash.ui.theme.PumpkinSplashTheme
 
 @Composable
