@@ -17,9 +17,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import com.example.pumpkinsplash.ui.theme.PumpkinSplashTheme
@@ -29,13 +29,20 @@ fun CustomToggle(
     isChecked: Boolean,
     onCheckedChange: (Boolean) -> Unit,
     modifier: Modifier = Modifier,
-    pumpkinWidth: Dp,
-    pumpkinHeight: Dp,
-    horizontalPadding: Dp,
-    startPositionOffsetToggle:Int,
-    endPositionOffsetToggle:Int,
     transition: Transition<Boolean>,
 ) {
+    val density = LocalDensity.current
+
+    val pumpkinWidth = 54.dp
+    val pumpkinHeight = 56.dp
+    val horizontalPadding = 10.dp
+    val customButtonWidth = 120.dp
+    val endPositionOffsetToggle = with(density) {
+        horizontalPadding.roundToPx()
+    }
+    val startPositionOffsetToggle = with(density) {
+        (customButtonWidth.roundToPx() - pumpkinWidth.roundToPx() - 2 * horizontalPadding.roundToPx())
+    }
     val offsetToggle by transition.animateIntOffset(
         transitionSpec = { tween(1000, easing = EaseIn) },
         label = "offset toggle animation"
