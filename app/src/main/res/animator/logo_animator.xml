@@ -2,6 +2,7 @@
 <set xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- 1 Appearance and Rotation:
       Initial scale up (logo grows from 50 to 100 size) -->
+    <set android:ordering="together">
     <objectAnimator
         android:duration="1800"
         android:propertyName="scaleX"
@@ -21,6 +22,7 @@
         android:valueFrom="0"
         android:valueTo="-720"
         android:valueType="floatType" />
+    </set>
     <!-- Tilt Left -->
     <objectAnimator
         android:duration="200"
@@ -52,43 +54,44 @@
         android:startOffset="2400"
         android:valueFrom="-720"
         android:valueTo="-720"
-        android:valueType="floatType" />
-    <!-- Final scale up (logo grows from 0.5x to 0.6x size) and tilt left -->
-    <objectAnimator
-        android:duration="400"
-        android:propertyName="scaleX"
-        android:startOffset="3200"
-        android:valueFrom="0.5"
-        android:valueTo="0.6"
-        android:valueType="floatType" />
-    <objectAnimator
-        android:duration="400"
-        android:propertyName="scaleY"
-        android:startOffset="3200"
-        android:valueFrom="0.5"
-        android:valueTo="0.6"
-        android:valueType="floatType" />
-    <objectAnimator
-        android:duration="400"
-        android:propertyName="rotation"
-        android:startOffset="3200"
-        android:valueFrom="-720"
-        android:valueTo="-735"
-        android:valueType="floatType" />
-    <!-- Step 8: Final tilt right -->
-    <objectAnimator
-        android:duration="400"
-        android:propertyName="rotation"
-        android:startOffset="3600"
-        android:valueFrom="-735"
-        android:valueTo="-705"
-        android:valueType="floatType" />
-    <!-- back center -->
-    <objectAnimator
-        android:duration="200"
-        android:propertyName="rotation"
-        android:startOffset="4000"
-        android:valueFrom="-705"
-        android:valueTo="-720"
-        android:valueType="floatType" />
+        android:valueType="floatType" />-->
+
+    <!--    &lt;!&ndash; Final scale up (logo grows from 0.5x to 0.6x size) and tilt left &ndash;&gt;
+        <objectAnimator
+            android:duration="400"
+            android:propertyName="scaleX"
+            android:startOffset="3200"
+            android:valueFrom="0.5"
+            android:valueTo="0.6"
+            android:valueType="floatType" />
+        <objectAnimator
+            android:duration="400"
+            android:propertyName="scaleY"
+            android:startOffset="3200"
+            android:valueFrom="0.5"
+            android:valueTo="0.6"
+            android:valueType="floatType" />
+        <objectAnimator
+            android:duration="400"
+            android:propertyName="rotation"
+            android:startOffset="3200"
+            android:valueFrom="-720"
+            android:valueTo="-735"
+            android:valueType="floatType" />
+        &lt;!&ndash; Step 8: Final tilt right &ndash;&gt;
+        <objectAnimator
+            android:duration="400"
+            android:propertyName="rotation"
+            android:startOffset="3600"
+            android:valueFrom="-735"
+            android:valueTo="-705"
+            android:valueType="floatType" />
+        &lt;!&ndash; back center &ndash;&gt;
+        <objectAnimator
+            android:duration="200"
+            android:propertyName="rotation"
+            android:startOffset="4000"
+            android:valueFrom="-705"
+            android:valueTo="-720"
+            android:valueType="floatType" />-->
 </set>
