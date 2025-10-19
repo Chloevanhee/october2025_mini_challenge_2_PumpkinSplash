@@ -1,7 +1,7 @@
 # Pumpkin Splash
 
-A simple splash screen with a pumpkin and a defined sequence of animations.
-
+1.A simple splash screen with a pumpkin and a defined sequence of animations.
+2. 
 ## Context
 
 This project was created for the october Mini Challenges in the Mobile Dev Campus by Philipp Lackner, using the provided Figma design and instructions.
@@ -44,6 +44,22 @@ Implement a simple splash screen with a pumpkin and a defined sequence of animat
     - Then in `0.4s`, tilts to the right
     - Finally, in `0.8s`, shrinks to `0` and disappears
 
-### Demo
+# Haunted Theme Switcher
+An Android app built with Jetpack Compose simulating a Day ↔ Night switch in a spooky Halloween style.
+Tapping the pumpkin toggle triggers smooth, synchronized animations between both themes.
+## Feature Goal
+    - Day → Night:
+        - - Sun moves down-right and disappears.
+        - - Moon rises from left.
+        - - Clouds fade out and slide away.
+        - - Graveyard background shifts to night version.
+        - - Semi-transparent dark overlay fades in.
+        - - Stars fade in, ghost scales from 50% → 100%.
+    - Night → Day:
+        - - Reverse animations (moon down, sun up, ghost and stars fade out, clouds return).
+All animations complete within 1 second.
+
+## Demo
 
 <img src="docs/Screen_recording_20251019_195554.gif" alt="Demo of Pumpkin Splash" width="320" />
+
