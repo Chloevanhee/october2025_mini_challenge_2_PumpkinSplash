@@ -1,7 +1,7 @@
 # Pumpkin Splash
 
 1.A simple splash screen with a pumpkin and a defined sequence of animations.
-2. 
+
 ## Context
 
 This project was created for the october Mini Challenges in the Mobile Dev Campus by Philipp Lackner, using the provided Figma design and instructions.
