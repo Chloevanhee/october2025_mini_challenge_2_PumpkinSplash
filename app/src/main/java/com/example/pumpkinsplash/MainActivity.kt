@@ -7,6 +7,7 @@ import android.view.View
 import android.view.animation.AccelerateInterpolator
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -16,39 +17,27 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.animation.doOnEnd
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.lifecycle.lifecycleScope
 import com.example.pumpkinsplash.presenter.viewmodel.SwitchHunterRoot
 import com.example.pumpkinsplash.ui.theme.PumpkinSplashTheme
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
-        installSplashScreen().apply {
-            setOnExitAnimationListener { screen ->
-                val icon = screen.iconView
+        var showSplash = true
+        lifecycleScope.launch {
+            delay(5000L)
+            showSplash = false
+        }
 
-                // Centrer le pivot
-                icon.pivotX = icon.width / 2f
-                icon.pivotY = icon.height / 2f
-
-                // 0.8s to 1.6s, shrinks to 0 and disappears
-                val scaleX = ObjectAnimator.ofFloat(icon, View.SCALE_X, 0.6f, 0f)
-                val scaleY = ObjectAnimator.ofFloat(icon, View.SCALE_Y, 0.6f, 0f)
-                val rotate = ObjectAnimator.ofFloat(icon, View.ROTATION, 0f, 360f)
-
-                val set = AnimatorSet().apply {
-                    playTogether(scaleX, scaleY, rotate)
-                    duration = 800
-                    interpolator = AccelerateInterpolator()
-                    doOnEnd { screen.remove() }
-                }
-                set.start()
-
-            }
-            //setKeepOnScreenCondition
+        installSplashScreen().setKeepOnScreenCondition {
+            showSplash
         }
         super.onCreate(savedInstanceState)
-        //enableEdgeToEdge() //or I comment this...
+        enableEdgeToEdge()
 
         setContent {
             PumpkinSplashTheme {
