@@ -10,15 +10,16 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.offset
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import com.example.pumpkinsplash.R
 import com.example.pumpkinsplash.TransitionDayNight
+import com.example.pumpkinsplash.presenter.common.constants.AnimationConstants.OFFSET_CLOUD2_X
+import com.example.pumpkinsplash.presenter.common.constants.AnimationConstants.OFFSET_CLOUD2_Y
 import com.example.pumpkinsplash.ui.theme.PumpkinSplashTheme
 
 @Composable
@@ -27,6 +28,9 @@ fun Cloud2Animation(
     transition: Transition<Boolean>,
     modifier: Modifier = Modifier
 ) {
+    val density = LocalDensity.current
+    val offsetXInDp = with(density) { OFFSET_CLOUD2_X.toDp() }
+    val offsetYInDp = with(density) { OFFSET_CLOUD2_Y }
 
     val translationCloud2 by transition.animateFloat(
         transitionSpec = { tween(1000, easing = EaseIn) },
@@ -35,22 +39,27 @@ fun Cloud2Animation(
     Box(
         Modifier
             .fillMaxSize()
-            //.align(Alignment.TopCenter)
-            .graphicsLayer(translationX = translationCloud2),
-        contentAlignment = Alignment.TopCenter
     ) {
         Image(
             painter = painterResource(R.drawable.cloud_02),
             contentDescription = "moon",
             modifier = modifier
-                .offset(93.dp, 99.dp)
-                .alpha(0.8f)
-                .graphicsLayer(translationX = translationCloud2)
+                .offset(offsetXInDp, offsetYInDp)
+                .graphicsLayer(
+                    translationX = translationCloud2,
+                    clip = false,
+                    alpha = 0.8f
+                ),
         )
     }
 }
 
-@Preview(showBackground = true)
+@Preview(
+    showBackground = true,
+    showSystemUi = true,
+    device = Devices.PIXEL_6A,
+    name = "Preview - Pixel 6A"
+)
 @Composable
 fun Cloud2AnimationPreview() {
     PumpkinSplashTheme {

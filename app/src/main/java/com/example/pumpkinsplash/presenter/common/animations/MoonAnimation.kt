@@ -17,26 +17,31 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
-import androidx.compose.ui.unit.dp
 import com.example.pumpkinsplash.R
 import com.example.pumpkinsplash.TransitionDayNight
+import com.example.pumpkinsplash.presenter.common.constants.AnimationConstants.MOON_ANGLE
+import com.example.pumpkinsplash.presenter.common.constants.AnimationConstants.SUN_MOON_PIVOT_FRACTION_X
+import com.example.pumpkinsplash.presenter.common.constants.AnimationConstants.SUN_MOON_PIVOT_FRACTION_Y
+import com.example.pumpkinsplash.presenter.common.constants.AnimationConstants.SUN_MOON_OFFSET_Y
 import com.example.pumpkinsplash.ui.theme.PumpkinSplashTheme
 
 @Composable
 fun MoonAnimation(widthScreen: Dp, transition: Transition<Boolean>, modifier: Modifier = Modifier) {
 
+
     val moonRotation by transition.animateFloat(
         transitionSpec = { tween(1000, easing = EaseIn) },
-        label = "overly animation"
+        label = "moon animation"
     ) { isDay ->
-        if (isDay) 50f else 0f
+        if (isDay) -MOON_ANGLE else 0f
     }
 
     Box(
         modifier
             .size(widthScreen)
             .graphicsLayer {
-                this.transformOrigin = TransformOrigin(0.5f, 2f)
+                this.transformOrigin =
+                    TransformOrigin(SUN_MOON_PIVOT_FRACTION_X, SUN_MOON_PIVOT_FRACTION_Y)
                 rotationZ = moonRotation
             },
         contentAlignment = Alignment.TopCenter
@@ -45,13 +50,11 @@ fun MoonAnimation(widthScreen: Dp, transition: Transition<Boolean>, modifier: Mo
             painter = painterResource(R.drawable.moon),
             contentDescription = "moon",
             modifier = modifier
-                .graphicsLayer {
-                    rotationZ = moonRotation
-                }
-                .offset(y=172.dp)
+                .offset(y = SUN_MOON_OFFSET_Y)
         )
     }
 }
+
 @Preview(showBackground = true)
 @Composable
 fun MoonAnimationPreview() {

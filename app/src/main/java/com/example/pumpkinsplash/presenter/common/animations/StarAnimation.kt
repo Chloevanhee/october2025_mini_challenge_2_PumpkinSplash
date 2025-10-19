@@ -27,7 +27,6 @@ fun StarAnimation(transition: Transition<Boolean>, modifier: Modifier = Modifier
     Box(
         modifier
             .fillMaxSize(),
-           // .align(Alignment.TopCenter)
         contentAlignment = Alignment.TopCenter
     ) {
         Image(
@@ -37,6 +36,7 @@ fun StarAnimation(transition: Transition<Boolean>, modifier: Modifier = Modifier
         )
     }
 }
+
 @Preview(showBackground = true)
 @Composable
 fun StarAnimationPreview() {

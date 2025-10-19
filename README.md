@@ -46,4 +46,4 @@ Implement a simple splash screen with a pumpkin and a defined sequence of animat
 
 ### Demo
 
-<img src="docs/Screen_recording_20251008_222136.gif" alt="Demo of Pumpkin Splash" width="320" />
+<img src="docs/Screen_recording_20251019_195554.gif" alt="Demo of Pumpkin Splash" width="320" />

@@ -30,7 +30,7 @@ import com.example.pumpkinsplash.ui.theme.PumpkinSplashTheme
 fun Graveyard(
     isDayMode: Boolean,
 
-    transition:Transition<Boolean>,
+    transition: Transition<Boolean>,
     modifier: Modifier = Modifier
 ) {
     val scroll = rememberScrollState(
@@ -49,7 +49,7 @@ fun Graveyard(
     }
     LaunchedEffect(key1 = isDayMode) {
         val target = if (isDayMode) scroll.maxValue else 0
-        scroll.animateScrollTo( //should we go to use updateTransition?
+        scroll.animateScrollTo(
             value = target,
             animationSpec = tween(durationMillis = 1000, easing = EaseIn)
         )
@@ -58,9 +58,7 @@ fun Graveyard(
         modifier = modifier
             .fillMaxSize()
             .horizontalScroll(scroll, true)
-            .background(backgroundColorAnimated)
-            .graphicsLayer(clip = false),  // Disable clipping in Graveyard
-
+            .background(backgroundColorAnimated),
         contentAlignment = Alignment.BottomCenter
     ) {
         //graveyard
@@ -79,6 +77,7 @@ fun Graveyard(
     }
 
 }
+
 @Preview(showBackground = true)
 @Composable
 fun GraveyardAnimationPreview() {

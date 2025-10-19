@@ -17,25 +17,31 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
-import androidx.compose.ui.unit.dp
 import com.example.pumpkinsplash.R
 import com.example.pumpkinsplash.TransitionDayNight
+import com.example.pumpkinsplash.presenter.common.constants.AnimationConstants.SUN_ANGLE
+import com.example.pumpkinsplash.presenter.common.constants.AnimationConstants.SUN_MOON_OFFSET_Y
+import com.example.pumpkinsplash.presenter.common.constants.AnimationConstants.SUN_MOON_PIVOT_FRACTION_X
+import com.example.pumpkinsplash.presenter.common.constants.AnimationConstants.SUN_MOON_PIVOT_FRACTION_Y
 import com.example.pumpkinsplash.ui.theme.PumpkinSplashTheme
 
 @Composable
-fun SunAnimation(widthScreen: Dp, transition: Transition<Boolean>, modifier: Modifier = Modifier) {
+fun SunAnimation(
+    widthScreen: Dp, transition: Transition<Boolean>, modifier: Modifier = Modifier
+) {
     val sunRotation by transition.animateFloat(
         transitionSpec = { tween(1000, easing = EaseIn) },
-        label = "overly animation"
+        label = "Sun Rotation"
     ) { isDay ->
-        if (isDay) 0f else -50f
+        if (isDay) 0f else SUN_ANGLE
     }
 
     Box(
         modifier
             .size(widthScreen)
             .graphicsLayer {
-                this.transformOrigin = TransformOrigin(0.5f, 2f)
+                this.transformOrigin =
+                    TransformOrigin(SUN_MOON_PIVOT_FRACTION_X, SUN_MOON_PIVOT_FRACTION_Y)
                 rotationZ = sunRotation
             },
         contentAlignment = Alignment.TopCenter
@@ -44,10 +50,7 @@ fun SunAnimation(widthScreen: Dp, transition: Transition<Boolean>, modifier: Mod
             painter = painterResource(R.drawable.sun),
             contentDescription = "Sun",
             modifier = modifier
-                .graphicsLayer {
-                    rotationZ = sunRotation
-                }
-                .offset(y=172.dp)
+                .offset(y = SUN_MOON_OFFSET_Y)
         )
     }
 }

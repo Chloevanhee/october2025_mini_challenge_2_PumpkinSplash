@@ -1,5 +1,6 @@
 package com.example.pumpkinsplash.presenter.screens
 
+import android.util.Log
 import androidx.compose.animation.core.updateTransition
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -40,6 +41,11 @@ fun SwitchHunterScreen(
     val widthScreenPx = with(density) {
         widthScreen.roundToPx()
     }
+    val heightScreePx = with(density) {
+        heightScreen.roundToPx()
+    }
+    Log.d("SwitchHunterScreen", "ScreenSize in Px: $widthScreenPx x $heightScreePx")
+    Log.d("SwitchHunterScreen", "ScreenSize: $widthScreen x $heightScreen")
 
     Box(
         modifier = modifier

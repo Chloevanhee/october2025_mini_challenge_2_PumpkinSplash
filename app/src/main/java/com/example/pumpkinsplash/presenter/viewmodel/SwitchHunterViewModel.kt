@@ -15,20 +15,19 @@ class SwitchHunterViewModel : ViewModel() {
     val uiState = _uiState.asStateFlow()
 
 
-    fun onAction(uiEvent : HunterSwitcherEvent){
-        when(uiEvent){
+    fun onAction(uiEvent: HunterSwitcherEvent) {
+        when (uiEvent) {
             is HunterSwitcherEvent.onDayModeChanged -> {
                 val currentState = _uiState.value.isDay
                 _uiState.value = SwitchHunterUiState(isDay = !currentState).copy()
             }
         }
-
     }
 
 }
 
 @Composable
-fun SwitchHunterRoot(modifier: Modifier = Modifier){
+fun SwitchHunterRoot(modifier: Modifier = Modifier) {
     val viewModel: SwitchHunterViewModel = viewModel()
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     SwitchHunterScreen(modifier, uiState, viewModel::onAction)
