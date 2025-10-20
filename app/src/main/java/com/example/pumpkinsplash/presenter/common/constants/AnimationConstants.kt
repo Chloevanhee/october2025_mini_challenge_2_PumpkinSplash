@@ -6,8 +6,8 @@ import androidx.compose.ui.unit.dp
    ScreenSize: 411.0.dp x 914.0.dp
 */
 object AnimationConstants {
-    const val MOON_ANGLE = 45f
-    const val SUN_ANGLE = 45f
+    const val MOON_ANGLE = 60f
+    const val SUN_ANGLE = 60f
     const val SUN_MOON_PIVOT_FRACTION_X = 0.5f
     const val SUN_MOON_PIVOT_FRACTION_Y = 1.5f
     val SUN_MOON_OFFSET_Y = 172.dp
