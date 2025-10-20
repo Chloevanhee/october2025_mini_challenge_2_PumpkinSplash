@@ -61,5 +61,5 @@ All animations complete within 1 second.
 
 ## Demo
 
-<img src="docs/Screen_recording_20251019_195554.gif" alt="Demo of Pumpkin Splash" width="320" />
+<img src="docs/Haunted_Theme_Switcher.gif" alt="Demo of Pumpkin Splash" width="320" />
 
